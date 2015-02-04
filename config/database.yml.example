@@ -18,9 +18,15 @@ development: &pgsql
 # You will often want to seperate your databases between dev
 # mode and prod mode. Absent a production db, though, defaulting
 # to dev is pretty sensible for many developer-users.
-production: &production
-  <<: *pgsql
-
+production: 
+    adapter: postgresql
+    database: msf_database
+    username: msf_user
+    password: lmnoplmnop
+    host: 127.0.0.1
+    port: 5432
+    pool: 75
+    timeout: 5
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
